@@ -1,75 +1,102 @@
+:root {
+  --gold: #f29e4b;
+  --grey: #a5a5a5;
+  --darkgrey: #333333;
+  --black: #000;
+  --white: #fff;
+}
 * {
   margin: 0;
-  padding: 0%;
+  padding: 0;
   box-sizing: border-box;
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
 }
-
-html {
-  font-size: 10px;
-}
-
 body {
-  font-size: 2.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-
-.calculator {
-  border: none;
-  background-color: black;
-  border-radius: 30px;
-  width: 300px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.calculator-keys {
+.container {
+  background-color: var(--black);
+  width: 18rem;
+  height: 31rem;
   display: grid;
-  grid-template-columns: repeat(4, 24%);
-  grid-gap: 10px;
-  padding: 20px;
+  grid-template-rows: 28% auto;
+  justify-content: center;
+  border-radius: 2rem;
 }
-
+/*--------------------------------------------------------------SCREEN----------------------------------------------------*/
 .screen {
-  width: 100%;
-  font-size: 6rem;
-  height: 70px;
-  border: none;
-  background-color: black;
-  color: white;
-  text-align: right;
-  padding-right: 15px;
-  padding-top: 10px;
-  margin-top: 50px;
+  display: grid;
+  grid-template-rows: repeat(2, 50%);
+  padding-top: 2.5rem;
+  justify-content: center;
+  width: 18rem;
+}
+.firstScreen {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 0.5rem;
+  font-size: 2.5rem;
+  width: 16rem;
+}
+.secondScreen {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 0.5rem;
+  font-size: 4rem;
+  width: 16rem;
 }
 
-button {
-  height: 50px;
-  width: 50px;
-  background-color: #ccc;
+/*-------------------------------------------------------------BUTTONS----------------------------------------------------------*/
+
+.buttons {
+  display: grid;
+  height: 70vh;
+  grid-template-columns: repeat(4, 3.6rem);
+  grid-template-rows: repeat(5, 3.6rem);
+  gap: 0.4rem;
+  padding-top: 2rem;
+  font-size: 1.5rem;
+  justify-content: center;
+}
+.button {
+  background-color: var(--darkgrey);
   border-radius: 50%;
-  border: none;
+  color: var(--white);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
 }
-#zero {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  width: 120px;
-  border-radius: 30px;
+.button:hover {
+  background-color: var(--grey);
 }
-.number {
-  background-color: rgb(55, 50, 50);
-  color: white;
+.zero {
+  grid-column: span 2;
+  border-radius: 2rem;
 }
-.operator1 {
-  background-color: grey;
+.ac,
+.plusminus,
+.percent {
+  background-color: var(--grey);
+  color: var(--black);
   font-weight: 600;
 }
-.operator {
-  background-color: rgb(251, 176, 12);
-  color: white;
-  font-weight: 700;
+.ac:hover,
+.plusminus:hover,
+.percent:hover {
+  background-color: grey;
+  color: var(--white);
 }
-
-button:active {
-  opacity: 0.6;
+.divide,
+.multiply,
+.minus,
+.plus,
+.equal {
+  background-color: var(--gold);
+  font-weight: 600;
 }
